@@ -17,6 +17,10 @@ import android.widget.ListView;
  */
 public class MainActivity extends Activity {
 
+    private static final int GOLD = 0xccac00;
+
+    private static final int GREEN = 0x005900;
+
     private ListView resourcesList;
 
     @Override
@@ -37,9 +41,9 @@ public class MainActivity extends Activity {
     private List<ResourceObject> getResourceList() {
         List<ResourceObject> resourceObjectList = new ArrayList<ResourceObject>();
         // green
-        resourceObjectList.add(new ResourceObject(R.drawable.resource_synthetic_ligatures, "Synthetic Ligatures", Color.GREEN));
-        resourceObjectList.add(new ResourceObject(R.drawable.resource_biosteel_frame, "Biosteel Frame", Color.GREEN));
-        resourceObjectList.add(new ResourceObject(R.drawable.resource_artificial_sinews, "Artificial Sinews", Color.GREEN));
+        resourceObjectList.add(new ResourceObject(R.drawable.resource_synthetic_ligatures, "Synthetic Ligatures", GREEN));
+        resourceObjectList.add(new ResourceObject(R.drawable.resource_biosteel_frame, "Biosteel Frame", GREEN));
+        resourceObjectList.add(new ResourceObject(R.drawable.resource_artificial_sinews, "Artificial Sinews", GREEN));
 
         // blue
         resourceObjectList.add(new ResourceObject(R.drawable.resource_entropic_nanotubes, "Entropic Nanotubes", Color.BLUE));
@@ -52,9 +56,9 @@ public class MainActivity extends Activity {
         resourceObjectList.add(new ResourceObject(R.drawable.resource_transnucleic_battery, "Transnucleic Battery", Color.MAGENTA));
 
         // gold
-        resourceObjectList.add(new ResourceObject(R.drawable.resource_fusion_motor, "Fusion Motor", Color.YELLOW));
-        resourceObjectList.add(new ResourceObject(R.drawable.resource_superconductive_fuel_cells, "Superconductive Fuel Cells", Color.YELLOW));
-        resourceObjectList.add(new ResourceObject(R.drawable.resource_hyper_keg, "Hyper Keg", Color.YELLOW));
+        resourceObjectList.add(new ResourceObject(R.drawable.resource_fusion_motor, "Fusion Motor", GOLD));
+        resourceObjectList.add(new ResourceObject(R.drawable.resource_superconductive_fuel_cells, "Superconductive Fuel Cells", GOLD));
+        resourceObjectList.add(new ResourceObject(R.drawable.resource_hyper_keg, "Hyper Keg", GOLD));
         return resourceObjectList;
     }
 }
