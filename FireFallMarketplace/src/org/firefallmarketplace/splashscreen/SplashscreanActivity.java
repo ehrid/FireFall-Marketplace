@@ -13,7 +13,7 @@ import android.widget.RelativeLayout;
  */
 public abstract class SplashscreanActivity extends Activity {
 
-    private static final int TIME = 2 * 1000;
+    private static final int TIME = 4 * 1000;
 
     private RelativeLayout layout;
 
