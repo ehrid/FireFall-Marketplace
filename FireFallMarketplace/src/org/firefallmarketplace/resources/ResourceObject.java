@@ -10,6 +10,7 @@ public class ResourceObject {
     public ResourceObject(int imageResourceId, String resourceName, int color) {
         this.imageResourceId = imageResourceId;
         this.resourceName = resourceName;
+        this.color = color;
     }
 
     public int getImageResourceId() {

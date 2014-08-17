@@ -12,7 +12,7 @@ import android.widget.ImageView;
  */
 public abstract class SplashscreanActivity extends Activity {
 
-    private static final int TIME = 4 * 1000;
+    private static final int TIME = 3 * 1000;
 
     private ImageView logo;
 
