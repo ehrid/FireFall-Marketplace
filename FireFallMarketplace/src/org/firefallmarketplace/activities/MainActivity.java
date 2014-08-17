@@ -17,9 +17,9 @@ import android.widget.ListView;
  */
 public class MainActivity extends Activity {
 
-    private static final int GOLD = 0xccac00;
+    private static final int GOLD = 0xFFCCAC00;
 
-    private static final int GREEN = 0x005900;
+    private static final int GREEN = 0xFF005900;
 
     private ListView resourcesList;
 
