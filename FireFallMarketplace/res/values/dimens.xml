@@ -1,0 +1,5 @@
+<resources>
+
+    <dimen name="splashscreen_logo_padding">30sp</dimen>
+
+</resources>
