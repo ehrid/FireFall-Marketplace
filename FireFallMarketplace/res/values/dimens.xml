@@ -1,5 +1,10 @@
 <resources>
-
+    
+	<!-- SPLASHSCREEN -->
     <dimen name="splashscreen_logo_padding">30sp</dimen>
+    
+    <!-- RESOURCES ITEM -->
+    <dimen name="resources_item_padding">10sp</dimen>
+    <dimen name="resources_item_text_size">20sp</dimen>
 
 </resources>
