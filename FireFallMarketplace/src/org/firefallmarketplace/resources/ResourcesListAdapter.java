@@ -56,6 +56,7 @@ public class ResourcesListAdapter extends ArrayAdapter<ResourceObject> {
 
         // Assign the appropriate data from our alert object above
         name.setText(res.getResourceName());
+        name.setTextColor(res.getColor());
         icon.setBackgroundResource(res.getImageResourceId());
 
         return alertView;

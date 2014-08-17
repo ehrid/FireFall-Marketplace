@@ -5,7 +5,9 @@ public class ResourceObject {
 
     private String resourceName;
 
-    public ResourceObject(int imageResourceId, String resourceName) {
+    private int color;
+
+    public ResourceObject(int imageResourceId, String resourceName, int color) {
         this.imageResourceId = imageResourceId;
         this.resourceName = resourceName;
     }
@@ -16,6 +18,10 @@ public class ResourceObject {
 
     public String getResourceName() {
         return resourceName;
+    }
+
+    public int getColor() {
+        return color;
     }
 
 }
