@@ -2,5 +2,6 @@
 
     <color name="background_black">#000000</color>
     <color name="background_white">#FFFFFF</color>
+    <color name="background_lightgray">#cfcfcf</color>
 
 </resources>
