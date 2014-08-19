@@ -1,0 +1,19 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </LinearLayout>
+
+    <Button
+            android:id="@+id/dialog_resource_item_show_chart"
+            android:layout_width="@dimen/dialog_resource_item_button_width"
+            android:layout_height="@dimen/dialog_resource_item_button_height"
+            android:background="@drawable/style_button"
+            android:text="@string/dialog_resource_item_show_chart"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/dialog_resource_item_button_text_size" />
+</LinearLayout>

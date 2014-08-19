@@ -50,15 +50,17 @@ public class ResourcesListAdapter extends ArrayAdapter<ResourceObject> {
             alertView = (LinearLayout) convertView;
         }
 
-        // Get the text boxes from the listitem.xml file
+        // initialize embedded views
         TextView name = (TextView) alertView.findViewById(R.id.resorces_item_name);
         ImageView icon = (ImageView) alertView.findViewById(R.id.resorces_item_icon);
         LinearLayout container = (LinearLayout) alertView.findViewById(R.id.resources_item_container);
 
-        // Assign the appropriate data from our alert object above
+        // Assign the appropriate data from our alert objects above
         name.setText(res.getResourceName());
         icon.setImageDrawable(alertView.getResources().getDrawable(res.getImageResourceId()));
         container.setBackgroundResource(res.getBackground());
+
+        // return view
         return alertView;
     }
 }

@@ -14,5 +14,14 @@
     <color name="item_background_pink_border">#d124c0</color>
     <color name="item_background_yellow">#ffe240</color>
     <color name="item_background_yellow_border">#ccac00</color>
+    
+    <!-- Dialogs -->
+	<color name="dialog_stroke">#333333</color>
+	
+	<!-- Text colors -->
+	<color name="text_white">#FFFFFF</color>
+	<color name="text_red">#FF0000</color>
+	<color name="text_black">#000000</color>
+	<color name="text_gray">#717171</color>
 
 </resources>

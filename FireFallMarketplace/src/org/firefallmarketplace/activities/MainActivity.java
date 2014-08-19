@@ -4,18 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.firefallmarketplace.R;
+import org.firefallmarketplace.activities.dialog.ResourceItemDialog;
 import org.firefallmarketplace.resources.RarityType;
 import org.firefallmarketplace.resources.ResourceObject;
 import org.firefallmarketplace.resources.ResourcesListAdapter;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
 /**
  * @author horodysk
  */
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements OnItemClickListener {
 
     private ListView resourcesList;
 
@@ -27,6 +32,8 @@ public class MainActivity extends Activity {
         resourcesList = (ListView) findViewById(R.id.resources_list);
 
         setAdpterOnResourceList();
+
+        resourcesList.setOnItemClickListener(this);
     }
 
     private void setAdpterOnResourceList() {
@@ -56,5 +63,11 @@ public class MainActivity extends Activity {
         resourceObjectList.add(new ResourceObject(R.drawable.resource_superconductive_fuel_cells, "Superconductive Fuel Cells", RarityType.PRTOTYPE));
         resourceObjectList.add(new ResourceObject(R.drawable.resource_hyper_keg, "Hyper Keg", RarityType.PRTOTYPE));
         return resourceObjectList;
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent intent = new Intent(MainActivity.this, ResourceItemDialog.class);
+        startActivity(intent);
     }
 }

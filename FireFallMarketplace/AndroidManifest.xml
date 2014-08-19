@@ -21,6 +21,9 @@
         </activity>
         <activity android:name=".splashscreen.LogoFireFall" />
         <activity android:name=".activities.MainActivity" />
+        <activity
+            android:name=".dialog.ResourceItemDialog"
+            android:theme="@style/transparentBackground" />
     </application>
 
 </manifest>

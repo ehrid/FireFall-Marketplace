@@ -1,12 +1,29 @@
 <resources>
-    
-	<!-- SPLASHSCREEN -->
+
+    <!-- SPLASHSCREEN -->
     <dimen name="splashscreen_logo_padding">30sp</dimen>
-    
+
     <!-- RESOURCES ITEM -->
     <dimen name="resources_item_padding">10sp</dimen>
-    <dimen name="resources_item_text_size">20sp</dimen>
+    <dimen name="resources_item_text_size">18sp</dimen>
     <dimen name="resources_item_background_corner_radius">15sp</dimen>
     <dimen name="resources_item_background_stroke_width">5sp</dimen>
+
+    <!-- Dialogs -->
+    <dimen name="dialog_stroke">5dp</dimen>
+    <dimen name="dialog_padding">20dp</dimen>
+    <dimen name="dialog_close_indentation">-15dp</dimen>
+    <dimen name="dialog_margins">30dp</dimen>
+
+    <!-- Dialog base -->
+    <dimen name="interface_button_size">30dp</dimen>
+    <dimen name="interface_button_margin_small">30dp</dimen>
+    <dimen name="interface_button_margin_big">60dp</dimen>
+    <dimen name="interface_margin_small">10dp</dimen>
+
+    <!-- Dialog resource item -->
+    <dimen name="dialog_resource_item_button_width">150dp</dimen>
+    <dimen name="dialog_resource_item_button_height">40dp</dimen>
+    <dimen name="dialog_resource_item_button_text_size">20dp</dimen>
 
 </resources>
