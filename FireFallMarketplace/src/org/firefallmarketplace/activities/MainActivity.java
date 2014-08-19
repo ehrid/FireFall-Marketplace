@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.firefallmarketplace.R;
-import org.firefallmarketplace.activities.dialog.ResourceItemDialog;
+import org.firefallmarketplace.dialog.ResourceItemDialog;
 import org.firefallmarketplace.resources.RarityType;
 import org.firefallmarketplace.resources.ResourceObject;
 import org.firefallmarketplace.resources.ResourcesListAdapter;
@@ -70,4 +70,5 @@ public class MainActivity extends Activity implements OnItemClickListener {
         Intent intent = new Intent(MainActivity.this, ResourceItemDialog.class);
         startActivity(intent);
     }
+
 }

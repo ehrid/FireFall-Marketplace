@@ -1,4 +1,4 @@
-package org.firefallmarketplace.activities.dialog;
+package org.firefallmarketplace.dialog;
 
 import org.firefallmarketplace.R;
 
