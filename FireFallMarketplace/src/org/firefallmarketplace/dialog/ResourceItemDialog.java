@@ -7,19 +7,26 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewStub;
 import android.widget.Button;
+import android.widget.EditText;
 
 /**
  * @author horodysk
  */
 public class ResourceItemDialog extends DialogActivity {
 
+    private Button showChartButton;
+
+    private Button addButton;
+
+    private EditText addValue;
+
     @Override
     protected void onCreateDialog(Bundle savedInstanceState) {
         View inflated = initializeDialogBody();
 
-        Button showChart = (Button) inflated.findViewById(R.id.dialog_resource_item_show_chart);
-        setTypeFont(showChart);
-        showChart.setOnClickListener(this);
+        initializeVariables(inflated);
+        setOnClicListeners();
+        setTypeFont();
     }
 
     private View initializeDialogBody() {
@@ -30,15 +37,30 @@ public class ResourceItemDialog extends DialogActivity {
         return inflated;
     }
 
-    private void setTypeFont(Button item) {
+    private void initializeVariables(View inflated) {
+        showChartButton = (Button) inflated.findViewById(R.id.dialog_resource_item_show_chart_button);
+        addButton = (Button) inflated.findViewById(R.id.dialog_resource_item_add_button);
+        addValue = (EditText) inflated.findViewById(R.id.dialog_resource_item_add_value);
+    }
+
+    private void setOnClicListeners() {
+        showChartButton.setOnClickListener(this);
+        addButton.setOnClickListener(this);
+    }
+
+    private void setTypeFont() {
         Typeface font = Typeface.createFromAsset(getAssets(), "fonts/YouRookMarbelous.ttf");
-        item.setTypeface(font);
+        showChartButton.setTypeface(font);
+        addButton.setTypeface(font);
     }
 
     @Override
     protected void onClickAction(View v) {
         switch (v.getId()) {
-            case R.id.dialog_resource_item_show_chart:
+            case R.id.dialog_resource_item_show_chart_button:
+                // do nothing
+                break;
+            case R.id.dialog_resource_item_add_button:
                 // do nothing
                 break;
         }

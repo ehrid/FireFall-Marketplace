@@ -4,5 +4,6 @@
     
     <!-- Dialog resource item -->
     <string name="dialog_resource_item_show_chart">SHOW CHART</string>
+    <string name="dialog_resource_item_add_value">ADD</string>
 
 </resources>
