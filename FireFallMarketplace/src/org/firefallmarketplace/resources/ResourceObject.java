@@ -5,12 +5,12 @@ public class ResourceObject {
 
     private String resourceName;
 
-    private int color;
+    private RarityType rarityType;
 
-    public ResourceObject(int imageResourceId, String resourceName, int color) {
+    public ResourceObject(int imageResourceId, String resourceName, RarityType rarityType) {
         this.imageResourceId = imageResourceId;
         this.resourceName = resourceName;
-        this.color = color;
+        this.rarityType = rarityType;
     }
 
     public int getImageResourceId() {
@@ -21,8 +21,8 @@ public class ResourceObject {
         return resourceName;
     }
 
-    public int getColor() {
-        return color;
+    public int getBackground() {
+        return rarityType.getBackground();
     }
 
 }

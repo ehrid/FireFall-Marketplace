@@ -2,5 +2,17 @@
 
     <color name="background_black">#000000</color>
     <color name="background_white">#FFFFFF</color>
+    
+    <!-- RESOURCE ITEM BACKGROUND -->
+    <color name="item_background_gray">#bdbdbd</color>
+    <color name="item_background_gray_border">#7d7d7d</color>
+    <color name="item_background_green">#6ab86a</color>
+    <color name="item_background_green_border">#005900</color>
+    <color name="item_background_blue">#4d97ff</color>
+    <color name="item_background_blue_border">#115ad1</color>
+    <color name="item_background_pink">#ff4ff3</color>
+    <color name="item_background_pink_border">#d124c0</color>
+    <color name="item_background_yellow">#ffe240</color>
+    <color name="item_background_yellow_border">#ccac00</color>
 
 </resources>

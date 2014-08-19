@@ -1,22 +1,30 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal" 
-    android:gravity="center_vertical"
-    android:padding="@dimen/resources_item_padding">
+    android:padding="@dimen/resources_item_padding" >
 
-    <ImageView
-        android:id="@+id/resorces_item_icon"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/resources_item_container"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/resource_default" />
+        android:background="@drawable/item_background_common"
+        android:gravity="center_vertical"
+        android:padding="@dimen/resources_item_padding"
+        android:orientation="horizontal" >
 
-    <TextView
-        android:id="@+id/resorces_item_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="@dimen/resources_item_padding"
-        android:textSize="@dimen/resources_item_text_size"
-        android:text="Resource Name" />
+        <ImageView
+            android:id="@+id/resorces_item_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/resource_default" />
+
+        <TextView
+            android:id="@+id/resorces_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/resources_item_padding"
+            android:text="Resource Name"
+            android:textSize="@dimen/resources_item_text_size" />
+    </LinearLayout>
 
 </LinearLayout>
