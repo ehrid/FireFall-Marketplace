@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".splashscreen.LogoFireFall" />
-        <activity android:name=".activities.MainActivity" />
+        <activity android:name=".activities.ResourceListActivity" />
         <activity
             android:name=".dialog.ResourceItemDialog"
             android:theme="@style/transparentBackground" />

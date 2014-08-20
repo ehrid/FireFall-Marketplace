@@ -1,7 +1,7 @@
 package org.firefallmarketplace.splashscreen;
 
 import org.firefallmarketplace.R;
-import org.firefallmarketplace.activities.MainActivity;
+import org.firefallmarketplace.activities.ResourceListActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,7 +19,7 @@ public class LogoFireFall extends SplashscreanActivity {
 
     @Override
     protected void startActivity() {
-        Intent intent = new Intent(LogoFireFall.this, MainActivity.class);
+        Intent intent = new Intent(LogoFireFall.this, ResourceListActivity.class);
         startActivity(intent);
     }
 

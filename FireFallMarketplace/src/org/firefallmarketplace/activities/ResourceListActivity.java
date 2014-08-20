@@ -20,7 +20,7 @@ import android.widget.ListView;
 /**
  * @author horodysk
  */
-public class MainActivity extends Activity implements OnItemClickListener {
+public class ResourceListActivity extends Activity implements OnItemClickListener {
 
     private ListView resourcesList;
 
@@ -67,7 +67,7 @@ public class MainActivity extends Activity implements OnItemClickListener {
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent intent = new Intent(MainActivity.this, ResourceItemDialog.class);
+        Intent intent = new Intent(ResourceListActivity.this, ResourceItemDialog.class);
         startActivity(intent);
     }
 
