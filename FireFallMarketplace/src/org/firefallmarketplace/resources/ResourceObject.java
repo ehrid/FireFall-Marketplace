@@ -1,6 +1,11 @@
 package org.firefallmarketplace.resources;
 
-public class ResourceObject {
+import java.io.Serializable;
+
+public class ResourceObject implements Serializable {
+    /***/
+    private static final long serialVersionUID = -1173366797654946424L;
+
     private int imageResourceId;
 
     private String resourceName;

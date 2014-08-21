@@ -5,5 +5,10 @@
     <!-- Dialog resource item -->
     <string name="dialog_resource_item_show_chart">SHOW CHART</string>
     <string name="dialog_resource_item_add_value">ADD</string>
+    
+    <!-- Resource Item dialog activity -->
+    <string name="activity_resourceitem_unspecified_object">Selected unspecified resource, dialog will not open</string>
+    <string name="activity_resourceitem_wrong_value">This is not valid price, oh you naughty user!</string>
+    <string name="activity_resourceitem_value_added">New value has been added, Good job!</string>
 
 </resources>

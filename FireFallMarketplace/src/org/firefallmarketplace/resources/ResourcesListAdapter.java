@@ -28,10 +28,6 @@ public class ResourcesListAdapter extends ArrayAdapter<ResourceObject> {
 
     }
 
-    public ResourceObject getResource(int position) {
-        return getItem(position);
-    }
-
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LinearLayout alertView;

@@ -16,8 +16,8 @@ public abstract class DialogActivity extends Activity implements OnClickListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dialog_base);
-        initializeBaseItems();
 
+        initializeBaseItems();
         onCreateDialog(savedInstanceState);
     }
 

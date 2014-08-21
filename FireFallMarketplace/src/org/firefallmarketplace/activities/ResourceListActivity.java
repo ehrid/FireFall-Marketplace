@@ -68,6 +68,10 @@ public class ResourceListActivity extends Activity implements OnItemClickListene
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent(ResourceListActivity.this, ResourceItemDialog.class);
+
+        ResourcesListAdapter adapter = (ResourcesListAdapter) resourcesList.getAdapter();
+        intent.putExtra(ResourceItemDialog.EXTRA_ITEM_TYPE_ID, adapter.getItem(position));
+
         startActivity(intent);
     }
 
