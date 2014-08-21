@@ -91,7 +91,7 @@ public class ResourceItemDialog extends DialogActivity {
 
                 if (newIntValue != 0) {
                     String toastMessage = getResources().getString(R.string.activity_resourceitem_value_added);
-                    toastMessage(toastMessage + " " + item.getResourceName() + " " + newIntValue);
+                    toastMessage(toastMessage);
                 }
 
                 break;
