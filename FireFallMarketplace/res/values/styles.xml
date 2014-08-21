@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
@@ -21,7 +21,9 @@
     </style>
 
     <style name="EditTextHoloDark" parent="android:style/Widget.EditText">
-        <item name="android:background">@drawable/edittext_background</item>
+        <item name="android:background">@drawable/button_unactive</item>
+        <item name="android:paddingLeft">@dimen/resources_item_padding</item>
+        <item name="android:paddingRight">@dimen/resources_item_padding</item>
         <item name="android:textColor">@color/text_black</item>
     </style>
 

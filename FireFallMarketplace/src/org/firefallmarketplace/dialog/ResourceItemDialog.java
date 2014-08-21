@@ -75,6 +75,7 @@ public class ResourceItemDialog extends DialogActivity {
         andLabel = (TextView) inflated.findViewById(R.id.dialog_resource_item_label_and);
 
         showChartButton.setEnabled(false);
+        showChartButton.setTextColor(getResources().getColor(R.color.text_gray));
     }
 
     private void setOnClicListeners() {
@@ -105,6 +106,7 @@ public class ResourceItemDialog extends DialogActivity {
                     toastMessage(toastMessage);
 
                     showChartButton.setEnabled(true);
+                    showChartButton.setTextColor(getResources().getColor(R.color.text_white));
                 }
 
                 break;

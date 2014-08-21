@@ -19,9 +19,9 @@
 	<color name="dialog_stroke">#333333</color>
 	
 	<!-- Text colors -->
-	<color name="text_white">#FFFFFF</color>
-	<color name="text_red">#FF0000</color>
-	<color name="text_black">#000000</color>
-	<color name="text_gray">#717171</color>
+	<color name="text_white">#FFFFFFFF</color>
+	<color name="text_red">#FFFF0000</color>
+	<color name="text_black">#FF000000</color>
+	<color name="text_gray">#FF717171</color>
 
 </resources>
