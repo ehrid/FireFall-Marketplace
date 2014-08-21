@@ -5,6 +5,9 @@
     <!-- Dialog resource item -->
     <string name="dialog_resource_item_show_chart">SHOW CHART</string>
     <string name="dialog_resource_item_add_value">ADD</string>
+    <string name="dialog_resource_item_add_label">Add new value:</string>
+    <string name="dialog_resource_item_and_label">and</string>
+    
     
     <!-- Resource Item dialog activity -->
     <string name="activity_resourceitem_unspecified_object">Selected unspecified resource, dialog will not open</string>

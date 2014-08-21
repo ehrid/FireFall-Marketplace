@@ -1,20 +1,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical" 
-    android:gravity="center_horizontal">
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/dialog_resource_item_label_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dialog_resource_item_add_label"
+        android:textColor="@color/text_white"
+        android:textSize="@dimen/dialog_resource_item_button_text_size" />
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" 
-        android:layout_marginBottom="@dimen/interface_margin_small">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/interface_margin_small" >
 
         <EditText
             android:id="@+id/dialog_resource_item_add_value"
+            style="@style/EditTextHoloDark"
             android:layout_width="@dimen/dialog_resource_item_add_button_width"
             android:layout_height="@dimen/dialog_resource_item_button_height"
             android:layout_marginRight="@dimen/interface_margin_small"
-            style="@style/EditTextHoloDark"
             android:inputType="number" >
 
             <requestFocus />
@@ -30,10 +37,21 @@
             android:textSize="@dimen/dialog_resource_item_button_text_size" />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/dialog_resource_item_label_and"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dialog_resource_item_and_label"
+        android:textColor="@color/text_white"
+        android:textSize="@dimen/dialog_resource_item_button_text_size"
+        android:layout_marginTop="@dimen/interface_margin_small"
+        android:layout_marginBottom="@dimen/interface_margin_small" />
+
     <Button
         android:id="@+id/dialog_resource_item_show_chart_button"
         android:layout_width="@dimen/dialog_resource_item_button_width"
         android:layout_height="@dimen/dialog_resource_item_button_height"
+        android:layout_gravity="center_horizontal"
         android:background="@drawable/style_button"
         android:text="@string/dialog_resource_item_show_chart"
         android:textColor="@color/text_white"

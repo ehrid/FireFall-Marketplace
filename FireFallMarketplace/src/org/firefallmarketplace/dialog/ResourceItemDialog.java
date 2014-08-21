@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewStub;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -25,6 +26,10 @@ public class ResourceItemDialog extends DialogActivity {
     private EditText addValue;
 
     private ResourceObject item;
+
+    private TextView addLabel;
+
+    private TextView andLabel;
 
     @Override
     protected void onCreateDialog(Bundle savedInstanceState) {
@@ -66,6 +71,10 @@ public class ResourceItemDialog extends DialogActivity {
         showChartButton = (Button) inflated.findViewById(R.id.dialog_resource_item_show_chart_button);
         addButton = (Button) inflated.findViewById(R.id.dialog_resource_item_add_button);
         addValue = (EditText) inflated.findViewById(R.id.dialog_resource_item_add_value);
+        addLabel = (TextView) inflated.findViewById(R.id.dialog_resource_item_label_add);
+        andLabel = (TextView) inflated.findViewById(R.id.dialog_resource_item_label_and);
+
+        showChartButton.setEnabled(false);
     }
 
     private void setOnClicListeners() {
@@ -77,6 +86,8 @@ public class ResourceItemDialog extends DialogActivity {
         Typeface font = Typeface.createFromAsset(getAssets(), "fonts/YouRookMarbelous.ttf");
         showChartButton.setTypeface(font);
         addButton.setTypeface(font);
+        addLabel.setTypeface(font);
+        andLabel.setTypeface(font);
     }
 
     @Override
@@ -92,6 +103,8 @@ public class ResourceItemDialog extends DialogActivity {
                 if (newIntValue != 0) {
                     String toastMessage = getResources().getString(R.string.activity_resourceitem_value_added);
                     toastMessage(toastMessage);
+
+                    showChartButton.setEnabled(true);
                 }
 
                 break;
