@@ -13,8 +13,7 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/interface_margin_small" >
+        android:layout_height="wrap_content" >
 
         <EditText
             android:id="@+id/dialog_resource_item_add_value"
