@@ -1,13 +1,9 @@
 package org.firefallmarketplace.activities;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.firefallmarketplace.R;
+import org.firefallmarketplace.adapters.ResourcesListAdapter;
+import org.firefallmarketplace.database.DataBaseHandler;
 import org.firefallmarketplace.dialog.ResourceItemDialog;
-import org.firefallmarketplace.resources.RarityType;
-import org.firefallmarketplace.resources.ResourceObject;
-import org.firefallmarketplace.resources.ResourcesListAdapter;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -22,6 +18,10 @@ import android.widget.ListView;
  */
 public class ResourceListActivity extends Activity implements OnItemClickListener {
 
+    public static final String EXTRA_ITEM_CATEGORY_ID = "org.firefallmarketplace.activities.EXTRA_ITEM_CATEGORY_ID";
+
+    private DataBaseHandler db;
+
     private ListView resourcesList;
 
     @Override
@@ -30,6 +30,7 @@ public class ResourceListActivity extends Activity implements OnItemClickListene
         setContentView(R.layout.activity_resources);
 
         resourcesList = (ListView) findViewById(R.id.resources_list);
+        db = new DataBaseHandler(this);
 
         setAdpterOnResourceList();
 
@@ -37,32 +38,18 @@ public class ResourceListActivity extends Activity implements OnItemClickListene
     }
 
     private void setAdpterOnResourceList() {
-        ResourcesListAdapter adapter = new ResourcesListAdapter(this, R.layout.activity_resource_item, getResourceList());
+        ResourcesListAdapter adapter = new ResourcesListAdapter(this, R.layout.activity_resource_item,
+            db.getResourcesInCategory(getCategoryId()));
         resourcesList.setAdapter(adapter);
     }
 
-    private List<ResourceObject> getResourceList() {
-        List<ResourceObject> resourceObjectList = new ArrayList<ResourceObject>();
-        // green
-        resourceObjectList.add(new ResourceObject(R.drawable.resource_synthetic_ligatures, "Synthetic Ligatures", RarityType.UNCOMMON));
-        resourceObjectList.add(new ResourceObject(R.drawable.resource_biosteel_frame, "Biosteel Frame", RarityType.UNCOMMON));
-        resourceObjectList.add(new ResourceObject(R.drawable.resource_artificial_sinews, "Artificial Sinews", RarityType.UNCOMMON));
+    private int getCategoryId() {
+        Bundle b = getIntent().getExtras();
 
-        // blue
-        resourceObjectList.add(new ResourceObject(R.drawable.resource_entropic_nanotubes, "Entropic Nanotubes", RarityType.RARE));
-        resourceObjectList.add(new ResourceObject(R.drawable.resource_adaptive_fibers, "Adaptive Fibers", RarityType.RARE));
-        resourceObjectList.add(new ResourceObject(R.drawable.resource_twinned_muscle_fibers, "Twinned Muscle Fibers", RarityType.RARE));
-
-        // purple
-        resourceObjectList.add(new ResourceObject(R.drawable.resource_thermionic_transformer, "Thermionic Transformer", RarityType.EPIC));
-        resourceObjectList.add(new ResourceObject(R.drawable.resource_polyphasic_fabric, "Polyphasic Fabric", RarityType.EPIC));
-        resourceObjectList.add(new ResourceObject(R.drawable.resource_transnucleic_battery, "Transnucleic Battery", RarityType.EPIC));
-
-        // gold
-        resourceObjectList.add(new ResourceObject(R.drawable.resource_fusion_motor, "Fusion Motor", RarityType.PRTOTYPE));
-        resourceObjectList.add(new ResourceObject(R.drawable.resource_superconductive_fuel_cells, "Superconductive Fuel Cells", RarityType.PRTOTYPE));
-        resourceObjectList.add(new ResourceObject(R.drawable.resource_hyper_keg, "Hyper Keg", RarityType.PRTOTYPE));
-        return resourceObjectList;
+        if (b != null) {
+            return b.getInt(EXTRA_ITEM_CATEGORY_ID);
+        }
+        return 0;
     }
 
     @Override

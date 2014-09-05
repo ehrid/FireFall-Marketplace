@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/resources_item_padding" >
+
+    <LinearLayout
+        android:id="@+id/category_item_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/style_button"
+        android:gravity="center_vertical"
+        android:padding="@dimen/resources_item_padding"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/category_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/resources_item_padding"
+            android:text="Category Name"
+            android:textSize="@dimen/resources_item_text_size" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,7 +1,7 @@
 package org.firefallmarketplace.dialog;
 
 import org.firefallmarketplace.R;
-import org.firefallmarketplace.resources.ResourceObject;
+import org.firefallmarketplace.database.objects.ResourceObject;
 
 import android.graphics.Typeface;
 import android.os.Bundle;

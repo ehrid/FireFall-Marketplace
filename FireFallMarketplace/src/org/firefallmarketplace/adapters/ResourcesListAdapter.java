@@ -1,8 +1,9 @@
-package org.firefallmarketplace.resources;
+package org.firefallmarketplace.adapters;
 
 import java.util.List;
 
 import org.firefallmarketplace.R;
+import org.firefallmarketplace.database.objects.ResourceObject;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -15,17 +16,12 @@ import android.widget.TextView;
 
 public class ResourcesListAdapter extends ArrayAdapter<ResourceObject> {
 
-    int resource;
-
-    String response;
-
-    Context appContext;
+    private int resource;
 
     // Initialize adapter
     public ResourcesListAdapter(Context context, int resource, List<ResourceObject> items) {
         super(context, resource, items);
         this.resource = resource;
-
     }
 
     @Override
@@ -53,7 +49,7 @@ public class ResourcesListAdapter extends ArrayAdapter<ResourceObject> {
 
         // Assign the appropriate data from our alert objects above
         name.setText(res.getResourceName());
-        icon.setImageDrawable(alertView.getResources().getDrawable(res.getImageResourceId()));
+        icon.setImageResource(alertView.getResources().getIdentifier(res.getImageResource(), null, null));
         container.setBackgroundResource(res.getBackground());
 
         // return view
