@@ -1,8 +1,11 @@
 package org.firefallmarketplace.activities;
 
+import java.util.List;
+
 import org.firefallmarketplace.R;
 import org.firefallmarketplace.adapters.ResourcesListAdapter;
 import org.firefallmarketplace.database.DataBaseHandler;
+import org.firefallmarketplace.database.objects.ResourceObject;
 import org.firefallmarketplace.dialog.ResourceItemDialog;
 
 import android.app.Activity;
@@ -38,8 +41,8 @@ public class ResourceListActivity extends Activity implements OnItemClickListene
     }
 
     private void setAdpterOnResourceList() {
-        ResourcesListAdapter adapter = new ResourcesListAdapter(this, R.layout.activity_resource_item,
-            db.getResourcesInCategory(getCategoryId()));
+        List<ResourceObject> resources = db.getResourcesInCategory(getCategoryId());
+        ResourcesListAdapter adapter = new ResourcesListAdapter(this, R.layout.activity_resource_item, resources);
         resourcesList.setAdapter(adapter);
     }
 

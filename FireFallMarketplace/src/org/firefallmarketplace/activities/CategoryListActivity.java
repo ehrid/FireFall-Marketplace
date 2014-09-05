@@ -1,8 +1,11 @@
 package org.firefallmarketplace.activities;
 
+import java.util.List;
+
 import org.firefallmarketplace.R;
 import org.firefallmarketplace.adapters.CategoryListAdapter;
 import org.firefallmarketplace.database.DataBaseHandler;
+import org.firefallmarketplace.database.objects.CategoryObject;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -29,12 +32,13 @@ public class CategoryListActivity extends Activity implements OnItemClickListene
         categoryList = (ListView) findViewById(R.id.category_list);
         db = new DataBaseHandler(this);
 
-        setAdpterOnResourceList();
+        setAdpterOnCategoryList();
         categoryList.setOnItemClickListener(this);
     }
 
-    private void setAdpterOnResourceList() {
-        CategoryListAdapter adapter = new CategoryListAdapter(this, R.layout.activity_resource_item, db.getCategories());
+    private void setAdpterOnCategoryList() {
+        List<CategoryObject> categories = db.getCategories();
+        CategoryListAdapter adapter = new CategoryListAdapter(this, R.layout.activity_category_item, categories);
         categoryList.setAdapter(adapter);
     }
 

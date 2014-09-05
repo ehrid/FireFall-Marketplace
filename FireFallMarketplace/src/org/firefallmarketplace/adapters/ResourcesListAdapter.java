@@ -6,6 +6,8 @@ import org.firefallmarketplace.R;
 import org.firefallmarketplace.database.objects.ResourceObject;
 
 import android.content.Context;
+import android.graphics.Typeface;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,10 +51,20 @@ public class ResourcesListAdapter extends ArrayAdapter<ResourceObject> {
 
         // Assign the appropriate data from our alert objects above
         name.setText(res.getResourceName());
-        icon.setImageResource(alertView.getResources().getIdentifier(res.getImageResource(), null, null));
+
+        int imageId = alertView.getResources().getIdentifier(res.getImageResource(), null, null);
+        Log.d("AAAAA", imageId + "");
+        icon.setImageResource(imageId);
         container.setBackgroundResource(res.getBackground());
+
+        setTypeFont(name);
 
         // return view
         return alertView;
+    }
+
+    private void setTypeFont(TextView name) {
+        Typeface font = Typeface.createFromAsset(getContext().getAssets(), "fonts/YouRookMarbelous.ttf");
+        name.setTypeface(font);
     }
 }

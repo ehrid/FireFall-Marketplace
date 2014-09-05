@@ -3,7 +3,7 @@ package org.firefallmarketplace.database.objects;
 import org.firefallmarketplace.R;
 
 public enum RarityType {
-    COMMON(R.drawable.item_background_uncommon),
+    COMMON(R.drawable.item_background_common),
     UNCOMMON(R.drawable.item_background_uncommon),
     RARE(R.drawable.item_background_rare),
     EPIC(R.drawable.item_background_epic),
@@ -20,11 +20,11 @@ public enum RarityType {
     }
 
     public static RarityType getByName(String abbr) {
-        for (RarityType v : values()) {
-            if (RarityType.valueOf("BRIEF") == v) {
-                return v;
-            }
+        try {
+            return RarityType.valueOf(abbr);
         }
-        return null;
+        catch (Exception ex) {
+            return COMMON;
+        }
     }
 }

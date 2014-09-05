@@ -18,7 +18,8 @@
             android:layout_height="wrap_content"
             android:paddingLeft="@dimen/resources_item_padding"
             android:text="Category Name"
-            android:textSize="@dimen/resources_item_text_size" />
+            android:textSize="@dimen/resources_item_text_size"
+            android:textColor="@color/text_white" />
     </LinearLayout>
 
 </LinearLayout>

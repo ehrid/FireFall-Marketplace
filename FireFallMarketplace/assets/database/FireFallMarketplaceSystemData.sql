@@ -1,4 +1,17 @@
 BEGIN TRANSACTION;
 CREATE TABLE IF NOT EXISTS categories(id INTEGER PRIMARY KEY, name TEXT);
+INSERT INTO categories VALUES(1,'Hybrids');
 CREATE TABLE IF NOT EXISTS resources(id INTEGER PRIMARY KEY, category INTEGER, image TEXT, name TEXT, rarity TEXT);
+INSERT INTO resources VALUES(1,1,"resource_synthetic_ligatures", "Synthetic Ligatures", "UNCOMMON");
+INSERT INTO resources VALUES(2,1,"resource_biosteel_frame", "Biosteel Frame", "UNCOMMON");
+INSERT INTO resources VALUES(3,1,"resource_artificial_sinews", "Artificial Sinews", "UNCOMMON");
+INSERT INTO resources VALUES(4,1,"resource_entropic_nanotubes", "Entropic Nanotubes", "RARE");
+INSERT INTO resources VALUES(5,1,"resource_adaptive_fibers", "Adaptive Fibers", "RARE");
+INSERT INTO resources VALUES(6,1,"resource_twinned_muscle_fibers", "Twinned Muscle Fibers", "RARE");
+INSERT INTO resources VALUES(7,1,"resource_thermionic_transformer", "Thermionic Transformer", "EPIC");
+INSERT INTO resources VALUES(8,1,"resource_polyphasic_fabric", "Polyphasic Fabric", "EPIC");
+INSERT INTO resources VALUES(9,1,"resource_transnucleic_battery", "Transnucleic Battery", "EPIC");
+INSERT INTO resources VALUES(10,1,"resource_fusion_motor", "Fusion Motor", "PRTOTYPE");
+INSERT INTO resources VALUES(11,1,"resource_superconductive_fuel_cells", "Superconductive Fuel Cells", "PRTOTYPE");
+INSERT INTO resources VALUES(12,1,"resource_hyper_keg", "Hyper Keg", "PRTOTYPE");
 COMMIT;

@@ -6,6 +6,7 @@ import org.firefallmarketplace.R;
 import org.firefallmarketplace.database.objects.CategoryObject;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,8 +47,14 @@ public class CategoryListAdapter extends ArrayAdapter<CategoryObject> {
 
         // Assign the appropriate data from our alert objects above
         name.setText(res.getName());
+        setTypeFont(name);
 
         // return view
         return alertView;
+    }
+
+    private void setTypeFont(TextView name) {
+        Typeface font = Typeface.createFromAsset(getContext().getAssets(), "fonts/YouRookMarbelous.ttf");
+        name.setTypeface(font);
     }
 }
