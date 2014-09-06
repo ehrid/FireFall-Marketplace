@@ -1,6 +1,8 @@
 package org.firefallmarketplace.dialog;
 
 import org.firefallmarketplace.R;
+import org.firefallmarketplace.database.DataBaseHandler;
+import org.firefallmarketplace.database.objects.PriceObject;
 import org.firefallmarketplace.database.objects.ResourceObject;
 
 import android.graphics.Typeface;
@@ -18,6 +20,8 @@ import android.widget.Toast;
  */
 public class ResourceItemDialog extends DialogActivity {
     public static final String EXTRA_ITEM_TYPE_ID = "org.firefallmarketplace.dialog.EXTRA_ITEM_TYPE_ID";
+
+    private DataBaseHandler db;
 
     private Button showChartButton;
 
@@ -76,6 +80,8 @@ public class ResourceItemDialog extends DialogActivity {
 
         showChartButton.setEnabled(false);
         showChartButton.setTextColor(getResources().getColor(R.color.text_gray));
+
+        db = new DataBaseHandler(this);
     }
 
     private void setOnClicListeners() {
@@ -99,9 +105,12 @@ public class ResourceItemDialog extends DialogActivity {
                 break;
             case R.id.dialog_resource_item_add_button:
                 String newStringValue = addValue.getText().toString().trim();
-                int newIntValue = verifyNewMarketplaceValue(newStringValue);
+                int price = verifyNewMarketplaceValue(newStringValue);
 
-                if (newIntValue != 0) {
+                if (price != 0) {
+
+                    db.addPrice(new PriceObject(item.getId(), System.currentTimeMillis(), price));
+
                     String toastMessage = getResources().getString(R.string.activity_resourceitem_value_added);
                     toastMessage(toastMessage);
 

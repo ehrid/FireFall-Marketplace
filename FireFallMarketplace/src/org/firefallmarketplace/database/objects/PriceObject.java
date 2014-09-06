@@ -10,17 +10,17 @@ public class PriceObject implements Serializable {
 
     private int resourceId;
 
-    private int timestamp;
+    private long timestamp;
 
     private double price;
 
-    public PriceObject(int resourceId, int timestamp, double price) {
+    public PriceObject(int resourceId, long timestamp, double price) {
         this.resourceId = resourceId;
         this.timestamp = timestamp;
         this.price = price;
     }
 
-    public PriceObject(int id, int resourceId, int timestamp, double price) {
+    public PriceObject(int id, int resourceId, long timestamp, double price) {
         this.id = id;
         this.resourceId = resourceId;
         this.timestamp = timestamp;
@@ -35,7 +35,7 @@ public class PriceObject implements Serializable {
         return resourceId;
     }
 
-    public int getTimestamp() {
+    public long getTimestamp() {
         return timestamp;
     }
 

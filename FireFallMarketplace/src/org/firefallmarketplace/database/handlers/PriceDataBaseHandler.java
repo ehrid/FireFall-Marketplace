@@ -42,7 +42,7 @@ public class PriceDataBaseHandler {
             do {
                 int id = Integer.parseInt(cursor.getString(0));
                 int res = Integer.parseInt(cursor.getString(1));
-                int date = Integer.parseInt(cursor.getString(2));
+                long date = Long.parseLong(cursor.getString(2));
                 double price = Double.parseDouble(cursor.getString(3));
                 PriceObject item = new PriceObject(id, res, date, price);
                 priceList.add(item);
