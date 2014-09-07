@@ -27,7 +27,7 @@ public class PriceDataBaseHandler {
     /***/
     public String getCreateSQL() {
         return String.format(
-            "CREATE TABLE IF NOT EXISTS %s(%s INTEGER PRIMARY KEY, %s INTEGER, %s INTEGER, %s DOUBLE)",
+            "CREATE TABLE IF NOT EXISTS %s(%s INTEGER PRIMARY KEY, %s INTEGER, %s INTEGER, %s INTEGER)",
             TABLE_NAME, KEY_ID, KEY_RES, KEY_DATE, KEY_PRICE);
     }
 
@@ -43,7 +43,7 @@ public class PriceDataBaseHandler {
                 int id = Integer.parseInt(cursor.getString(0));
                 int res = Integer.parseInt(cursor.getString(1));
                 long date = Long.parseLong(cursor.getString(2));
-                double price = Double.parseDouble(cursor.getString(3));
+                int price = Integer.parseInt(cursor.getString(3));
                 PriceObject item = new PriceObject(id, res, date, price);
                 priceList.add(item);
             }

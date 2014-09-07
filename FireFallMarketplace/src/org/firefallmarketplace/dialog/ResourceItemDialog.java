@@ -1,10 +1,12 @@
 package org.firefallmarketplace.dialog;
 
 import org.firefallmarketplace.R;
+import org.firefallmarketplace.activities.ChartActivity;
 import org.firefallmarketplace.database.DataBaseHandler;
 import org.firefallmarketplace.database.objects.PriceObject;
 import org.firefallmarketplace.database.objects.ResourceObject;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.format.Time;
@@ -101,26 +103,35 @@ public class ResourceItemDialog extends DialogActivity {
     protected void onClickAction(View v) {
         switch (v.getId()) {
             case R.id.dialog_resource_item_show_chart_button:
-                // TODO open chart activity
+                startChartActivity();
                 break;
             case R.id.dialog_resource_item_add_button:
-                String newStringValue = addValue.getText().toString().trim();
-                int price = verifyNewMarketplaceValue(newStringValue);
-
-                if (price != 0) {
-
-                    db.addPrice(new PriceObject(item.getId(), System.currentTimeMillis(), price));
-
-                    String toastMessage = getResources().getString(R.string.activity_resourceitem_value_added);
-                    toastMessage(toastMessage);
-
-                    showChartButton.setEnabled(true);
-                    showChartButton.setTextColor(getResources().getColor(R.color.text_white));
-                }
-
+                addNewPriceToDB();
                 break;
         }
 
+    }
+
+    private void startChartActivity() {
+        Intent intent = new Intent(ResourceItemDialog.this, ChartActivity.class);
+        intent.putExtra(ChartActivity.EXTRA_RESOURCE_ID, item.getId());
+        startActivity(intent);
+    }
+
+    private void addNewPriceToDB() {
+        String newStringValue = addValue.getText().toString().trim();
+        int price = verifyNewMarketplaceValue(newStringValue);
+
+        if (price != 0) {
+
+            db.addPrice(new PriceObject(item.getId(), System.currentTimeMillis(), price));
+
+            String toastMessage = getResources().getString(R.string.activity_resourceitem_value_added);
+            toastMessage(toastMessage);
+
+            showChartButton.setEnabled(true);
+            showChartButton.setTextColor(getResources().getColor(R.color.text_white));
+        }
     }
 
     private int verifyNewMarketplaceValue(String newMarketplaceValue) {

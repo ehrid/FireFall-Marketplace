@@ -20,7 +20,7 @@ public class UserDataBaseHandler {
     }
 
     /***/
-    public List<PriceObject> getAllPricesForResource(int resId, SQLiteDatabase db) {
+    public List<PriceObject> getPricesForResource(int resId, SQLiteDatabase db) {
         return priceHandler.getForRes(resId, db);
     }
 

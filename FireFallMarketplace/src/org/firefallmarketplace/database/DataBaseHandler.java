@@ -54,8 +54,8 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     }
 
     /***/
-    public List<PriceObject> getAllPricesForResource(int resId) {
-        return userData.getAllPricesForResource(resId, getWritableDatabase());
+    public List<PriceObject> getPricesForResource(int resId) {
+        return userData.getPricesForResource(resId, getWritableDatabase());
     }
 
     /***/

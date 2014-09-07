@@ -6,7 +6,7 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="19" />
-    
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -22,6 +22,9 @@
         <activity android:name=".splashscreen.LogoFireFall" />
         <activity android:name=".activities.ResourceListActivity" />
         <activity android:name=".activities.CategoryListActivity" />
+        <activity
+            android:name=".activities.ChartActivity"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".dialog.ResourceItemDialog"
             android:theme="@style/transparentBackground" />
