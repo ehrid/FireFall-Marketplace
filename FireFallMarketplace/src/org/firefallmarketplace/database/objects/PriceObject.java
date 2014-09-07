@@ -42,5 +42,6 @@ public class PriceObject implements Serializable {
     public double getPrice() {
         return price;
     }
+    // TODO get date
 
 }

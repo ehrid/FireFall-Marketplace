@@ -101,7 +101,7 @@ public class ResourceItemDialog extends DialogActivity {
     protected void onClickAction(View v) {
         switch (v.getId()) {
             case R.id.dialog_resource_item_show_chart_button:
-                // do nothing
+                // TODO open chart activity
                 break;
             case R.id.dialog_resource_item_add_button:
                 String newStringValue = addValue.getText().toString().trim();

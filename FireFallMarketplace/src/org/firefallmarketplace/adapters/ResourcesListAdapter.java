@@ -1,5 +1,6 @@
 package org.firefallmarketplace.adapters;
 
+import java.lang.reflect.Field;
 import java.util.List;
 
 import org.firefallmarketplace.R;
@@ -52,8 +53,8 @@ public class ResourcesListAdapter extends ArrayAdapter<ResourceObject> {
         // Assign the appropriate data from our alert objects above
         name.setText(res.getResourceName());
 
-        int imageId = alertView.getResources().getIdentifier(res.getImageResource(), null, null);
-        Log.d("AAAAA", imageId + "");
+        int imageId = getResId(res.getImageResource(), R.drawable.class);
+        Log.d("AAAAA", imageId + ""); // TODO load image
         icon.setImageResource(imageId);
         container.setBackgroundResource(res.getBackground());
 
@@ -66,5 +67,32 @@ public class ResourcesListAdapter extends ArrayAdapter<ResourceObject> {
     private void setTypeFont(TextView name) {
         Typeface font = Typeface.createFromAsset(getContext().getAssets(), "fonts/YouRookMarbelous.ttf");
         name.setTypeface(font);
+    }
+
+    /**
+     * @author Lonkly
+     * @param variableName
+     *            - name of drawable, e.g R.drawable.<b>image</b>
+     * @param с
+     *            - class of resource, e.g R.drawable, of R.raw
+     * @return integer id of resource
+     */
+    public int getResId(String variableName, Class<?> с) {
+        Field field = null;
+        int resId = 0;
+        try {
+            field = с.getField(variableName);
+            try {
+                resId = field.getInt(null);
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        return resId;
+
     }
 }
