@@ -3,6 +3,7 @@ package org.firefallmarketplace.activities;
 import java.util.List;
 
 import org.firefallmarketplace.R;
+import org.firefallmarketplace.chartFormatters.HourMinSecFormatter;
 import org.firefallmarketplace.database.DataBaseHandler;
 import org.firefallmarketplace.database.objects.PriceObject;
 
@@ -10,6 +11,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.LinearLayout;
 
+import com.jjoe64.graphview.CustomLabelFormatter;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.GraphView.GraphViewData;
 import com.jjoe64.graphview.GraphViewSeries;
@@ -53,25 +55,34 @@ public class ChartActivity extends Activity {
     }
 
     private GraphView createChart() {
-        // init example series data
-        GraphViewData[] graphViewDatas = new GraphViewData[resources.size()];
+        GraphView graphView = new LineGraphView(this, "Resource prices chart");
 
-        for (int i = 0; i < graphViewDatas.length; i++) {
-            PriceObject price = resources.get(i);
-            double x = price.getDate();
-            int y = price.getPrice();
-            graphViewDatas[i] = new GraphViewData(x, y);
-        }
-
-        GraphViewSeries exampleSeries = new GraphViewSeries(graphViewDatas);
-
-        GraphView graphView = new LineGraphView(
-            this // context
-            , "Resource prices chart" // heading
-        );
-        graphView.addSeries(exampleSeries); // data
+        setSeries(graphView);
+        setLabelFormatter(graphView);
 
         return graphView;
+    }
+
+    private void setSeries(GraphView graphView) {
+        GraphViewSeries series = new GraphViewSeries(getData());
+        graphView.addSeries(series);
+    }
+
+    private GraphViewData[] getData() {
+        GraphViewData[] data = new GraphViewData[resources.size()];
+
+        for (int i = 0; i < data.length; i++) {
+            PriceObject price = resources.get(i);
+            long x = price.getTimestamp();
+            int y = price.getPrice();
+            data[i] = new GraphViewData(x, y);
+        }
+        return data;
+    }
+
+    private void setLabelFormatter(GraphView graphView) {
+        CustomLabelFormatter customLabelFormatter = new HourMinSecFormatter();
+        graphView.setCustomLabelFormatter(customLabelFormatter);
     }
 
     private void addChartToView(GraphView graphView) {

@@ -1,7 +1,6 @@
 package org.firefallmarketplace.database.objects;
 
 import java.io.Serializable;
-import java.util.Date;
 
 public class PriceObject implements Serializable {
     /***/
@@ -38,13 +37,6 @@ public class PriceObject implements Serializable {
 
     public long getTimestamp() {
         return timestamp;
-    }
-
-    @SuppressWarnings("deprecation")
-    public double getDate() {
-        Date time = new Date(timestamp);
-        int i = time.getHours() * 60 + time.getMinutes();
-        return i == 0 ? timestamp : i;
     }
 
     public int getPrice() {
