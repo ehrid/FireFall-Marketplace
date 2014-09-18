@@ -1,4 +1,3 @@
-BEGIN TRANSACTION;
 CREATE TABLE IF NOT EXISTS categories(id INTEGER PRIMARY KEY, name TEXT);
 INSERT INTO categories VALUES(1,'Hybrids');
 CREATE TABLE IF NOT EXISTS resources(id INTEGER PRIMARY KEY, category INTEGER, image TEXT, name TEXT, rarity TEXT);
@@ -14,4 +13,3 @@ INSERT INTO resources VALUES(9,1,"resource_transnucleic_battery", "Transnucleic 
 INSERT INTO resources VALUES(10,1,"resource_fusion_motor", "Fusion Motor", "PRTOTYPE");
 INSERT INTO resources VALUES(11,1,"resource_superconductive_fuel_cells", "Superconductive Fuel Cells", "PRTOTYPE");
 INSERT INTO resources VALUES(12,1,"resource_hyper_keg", "Hyper Keg", "PRTOTYPE");
-COMMIT;
